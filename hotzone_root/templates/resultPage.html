@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+{% if successful == "true" %}
+<head>
+    <meta charset="UTF-8">
+    <title>Record Added</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+</head>
+<body>
+    <h1>Record Added</h1>
+    <table>
+        <tr>
+        <td>Address ZH</td>
+            <td>{{ addresszh }}</td>
+        </tr>
+        <tr>
+            <td>Address EN</td>
+            <td>{{ addressen }}</td>
+        </tr>
+          <tr>
+            <td>x</td>
+            <td>{{ x }}</td>
+          </tr>
+          <tr>
+            <td>y</td>
+            <td>{{ y }}</td>
+          </tr>
+          <tr>
+            <td>Name EN</td>
+            <td>{{ nameen }}</td>
+          </tr>
+          <tr>
+            <td>Name ZH</td>
+            <td>{{ namezh }}</td>
+          </tr>
+        </table>
+
+    <h2>Beack to search location page</h2>
+        <form action="searchbox" method="get">
+            <input type="submit" value="Back">
+        </form>
+    <h2>Cancel adding this record</h2>
+        <form action="cancel" method="get">
+            <button name="key" type="submit" value={{ pk }}> Cancel </button>
+        </form>
+</body>
+{% else %}
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+    <h1>No result for {{ address_input }}!</h1>
+    <h1>Recieve status code: {{ code }}</h1>
+    <h1>Search location ends</h1>
+    <a href="url">link text</a>
+</body>
+{% endif %}
+</html>
