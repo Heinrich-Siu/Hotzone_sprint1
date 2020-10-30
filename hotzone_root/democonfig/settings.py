@@ -26,7 +26,7 @@ SECRET_KEY = 'kj&=x7erb+a))^8$@+2pq*b)d#32go7@((6wl%$+evz9g%p==d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["0.0.0.0", "https://hot-zone-hezz.herokuapp.com/", '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'democonfig.urls'
@@ -120,3 +121,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
