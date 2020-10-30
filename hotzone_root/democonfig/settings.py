@@ -26,7 +26,7 @@ SECRET_KEY = 'kj&=x7erb+a))^8$@+2pq*b)d#32go7@((6wl%$+evz9g%p==d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["0.0.0.0", "https://hot-zone-hezz.herokuapp.com/", '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ["0.0.0.0", "hot-zone-hezz.herokuapp.com", '127.0.0.1', 'localhost']
 
 
 # Application definition
