@@ -92,7 +92,7 @@ DATABASES = {
 }
 '''
 DATABASES = {
-    'default': env.dj_db_url('postgres://judewrqiqbaaiz:64d94c27a17b00e301dd5583a00c05f4030b7c7f4d31e70ddb936b955b52fd2a@ec2-34-192-122-0.compute-1.amazonaws.com:5432/d7shggti893r8m')
+    'default': env.dj_db_url('DATABASE_URL')
 }
 
 
