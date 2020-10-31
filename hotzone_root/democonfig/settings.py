@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from environs import Env
 import os
+
+env = Env()
+env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -75,12 +79,20 @@ WSGI_APPLICATION = 'democonfig.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hotzone',
+        'USER': 'hezz',
+        'PASSWORD': 'Hezz',
+        'HOST': 'localhost',
+        'PORT': '',
     }
+}
+'''
+DATABASES = {
+    'default': env.dj_db_url('postgres://judewrqiqbaaiz:64d94c27a17b00e301dd5583a00c05f4030b7c7f4d31e70ddb936b955b52fd2a@ec2-34-192-122-0.compute-1.amazonaws.com:5432/d7shggti893r8m')
 }
 
 
